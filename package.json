@@ -1,0 +1,38 @@
+{
+  "name": "lab_class15",
+  "version": "1.0.0",
+  "description": "Build an API Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test-watch": "jest --watchAll",
+    "startDB": "mkdir -p ./.db && mongod --dbpath ./.db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyndsey-401-advanced-javascript/lab_class15.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyndsey-401-advanced-javascript/lab_class15/issues"
+  },
+  "homepage": "https://github.com/lyndsey-401-advanced-javascript/lab_class15#readme",
+  "devDependencies": {
+    "express-swagger-generator": "^1.1.15",
+    "jest": "^24.9.0",
+    "jsdoc": "^3.6.3"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cf-supergoose": "^1.0.2",
+    "cors": "^2.8.5",
+    "eslint": "^6.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.11",
+    "morgan": "^1.9.1"
+  }
+}
