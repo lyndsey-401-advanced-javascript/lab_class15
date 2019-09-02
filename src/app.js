@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(apiRouter); //this is wrong
+app.use(router); //this is wrong
 
 //catch all/error handling
 app.use(notFound);
