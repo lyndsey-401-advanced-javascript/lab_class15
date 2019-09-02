@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 
 //middleware being brought in 
@@ -20,12 +21,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+app.use(apiRouter); //this is wrong
 
 //catch all/error handling
 app.use(notFound);
 app.use(errorHandler);
-
-
 
 
 module.exports = {
@@ -34,5 +34,6 @@ module.exports = {
     app.listen(port, () => {
       console.log(`Server is running on ${port}`);
     })
-  }
+  },
+  server: app,
 };
