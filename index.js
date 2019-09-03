@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('./src/app.js');
+require('dotenv').config();
 
 
 const mongoose = require('mongoose');

@@ -9,10 +9,10 @@ try {
   
   
   switch( authType.toLowerCase() ) {
-    case 'basic': //authType: if basic, goes to basic
+    case 'basic': 
       return _authBasic(authString);
-    case 'bearer': //authBearer: if bearer, goes to basic 
-      return _authBearer(authString); //sets up _authBearer authorization
+    case 'bearer': 
+      return _authBearer(authString); 
     default: 
       return _authError();
   }

@@ -17,7 +17,7 @@ apiRouter.post('/signup', (request, response, next) => {
     }).catch(next);
 });
 
-apiRouter.post('/signin', auth, (request, response, next) => {
+apiRouter.post('/signin', (request, response, next) => {
   response.cookie('auth', request.token);
   response.send(request.token);
 });

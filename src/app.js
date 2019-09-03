@@ -7,6 +7,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const router = require('./router.js');
+
 
 const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
@@ -21,7 +23,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(router); //this is wrong
+app.use(router); //TODO: fix this issue, what goes here? 
 
 //catch all/error handling
 app.use(notFound);
