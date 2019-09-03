@@ -1,6 +1,7 @@
 'use strict';
 
-const Model = require('./mongo.js');
+
+const Model = require('./mongoo'); //TODO: make sure model works, mongo issues? 
 const schema = require('./categories-schema');
 
 class Categories extends Model {

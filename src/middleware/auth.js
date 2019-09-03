@@ -28,7 +28,7 @@ function _authBasic(str) {
   let [username, password] = bufferString.split(':');
   let auth = {username,password}; 
   
-  return User.authenticateBasic(auth) 
+  return User.authenticateBasic(auth)  //static method
     .then(user => _authenticate(user) )
     .catch(next);
 }

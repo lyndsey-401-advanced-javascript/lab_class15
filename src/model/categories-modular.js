@@ -7,16 +7,16 @@ const categoriesRouter = express.Router();
 const Categories = require('./categories.js');
 const categories = new Categories();
 
-// Routes
-categoriesRouter.get('/api/v1/categories', getCategories);  //route and callback
-categoriesRouter.post('/api/v1/categories', postCategories);
+//TODO: Refine and add auth process to these routes
+// the API Routes
+categoriesRouter.get('/api/v1/categories', /** add auth here */ getCategories);  //route and callback
+categoriesRouter.post('/api/v1/categories', /** auth '' */ postCategories);
 categoriesRouter.get('/api/v1/categories/:id', getCategory);
 categoriesRouter.put('/api/v1/categories/:id', putCategories);
 categoriesRouter.delete('/api/v1/categories/:id', deleteCategories);
 
 // ROUTE HANDLER FUNCTIONS
 function getCategories(request,response,next) {
-  // expects an array of object to be returned from the model
   categories.get()
     .then( data => {
       const output = {
@@ -29,7 +29,6 @@ function getCategories(request,response,next) {
 }
   
 function getCategory(request,response,next) {
-  // expects an array with the one matching record from the model
   categories.get(request.params.id)
     .then( result => response.status(200).json(result) )
     .catch( next );

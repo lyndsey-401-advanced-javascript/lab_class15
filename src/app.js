@@ -9,6 +9,7 @@ const morgan = require('morgan');
 
 const router = require('./router.js');
 
+const categoriesRoute = require('./model/categories.js');
 
 const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
@@ -16,14 +17,14 @@ const notFound = require( './middleware/404.js' );
 
 const app = express();
 
-//app level middleware 
 app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(router); //TODO: fix this issue, what goes here? 
+app.use(router); 
+app.use(categoriesRoute); //pulls in model and schema + API routes
 
 //catch all/error handling
 app.use(notFound);

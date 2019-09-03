@@ -91,10 +91,7 @@ newUserSchema.methods.generateToken = function() {
     role: this.role,
   };
   
-  //secretOrPrivateKey
-  //{expiresIn should tell the key to expire after 15minutes (or 900seconds)}
-  return jwt.sign(token, process.env.SECRET);
-  //returns json web token as a string
+  return jwt.sign(token, process.env.SECRET); //creates/generates token
 };
 
 module.exports = mongoose.model('users', newUserSchema);
